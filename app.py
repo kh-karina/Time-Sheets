@@ -9,10 +9,9 @@ from flask import request
 from flask import Flask
 import regex as re
 import os
-from flask_cors import CORS  # Добавляем CORS
 
 app = Flask(__name__)
-CORS(app)
+
 
 # Get port from environment variable (Railway will provide this)
 port = int(os.environ.get("PORT", 5000))
