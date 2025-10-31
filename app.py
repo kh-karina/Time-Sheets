@@ -429,9 +429,9 @@ def update_task_name():
           }, 403
   try:
     tasks_master_list.objects(
-                  __raw__={f"tasks_list.{request_body["task_id"]}": {"$exists": True}}
+                  __raw__={f"tasks_list.{request_body['task_id']}": {"$exists": True}}
               ).update(
-                  __raw__={"$set": {f"tasks_list.{request_body["task_id"]}": request_body["new_task_name"]}}
+                  __raw__={"$set": {f"tasks_list.{request_body['task_id']}": request_body['new_task_name']}}
               )
   except Exception as e:
         return {"error": "Ошибка сервера. Попробуйте повторить позже"}, 500
